@@ -1,0 +1,65 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #af8989;;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    max-width: 180px;
+    background-image: url("../../../../public/bg.png");
+    background-size: cover;
+    color: white;
+
+    &__img {
+        align-self: center;
+        width: 50%;
+    }
+
+    &__club {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__season {
+        font-size: 8px !important;
+        &-name, &-serial {
+            font-weight: lighter;
+        }
+    }
+
+    &__detail {
+        text-align: center;
+        &-img {
+            max-width: 20px;
+        }
+
+        &-number {
+            font-size: 8px;
+            font-weight: lighter;
+        }
+    }
+
+    &__player {
+        display: flex;
+        justify-content: space-around;
+        &-info {
+            padding: 4px;
+            text-align: center;
+            &-title{
+                font-weight: lighter;
+                font-size: 8px;
+            }
+            &-content {
+                font-size: 10px;
+            }
+            &-img {
+                max-width: 20px;
+                border-radius: 50%;
+            }
+        }
+        
+    }
+}

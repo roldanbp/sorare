@@ -3,10 +3,9 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const Proxy = (app) => {
     app.use(
-        '/api',
-        () => console.log("TOME"),
+        '/graphql',
         createProxyMiddleware({
-          target: 'https://api.sorare.com/graphql',
+          target: 'https://api.sorare.com',
           changeOrigin: true,
         })
       );
