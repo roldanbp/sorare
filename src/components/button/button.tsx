@@ -2,8 +2,7 @@ import './styles/index.scss'
 
 const namespace = 'button'
 
-const Button = ({onClickHandler} : any) => {
-
+const Button = ({ onClickHandler }: any) => {
     return (
         <button
             data-testid={namespace}

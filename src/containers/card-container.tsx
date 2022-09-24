@@ -12,23 +12,30 @@ const CardContainer = () => {
     const { slug } = useParams()
 
     const slugs = slug?.split(',') || []
-    
-    let placeholders = slugs.filter((c, index) =>  slugs.indexOf(c) === index);
+
+    let placeholders = slugs.filter((c, index) => slugs.indexOf(c) === index)
 
     const { loading, error, data } = useQuery(GET_CARD_QUERY, {
         variables: { slugs },
     })
 
     if (!reveal || loading) {
-        return <PlaceHolder placeholder={placeholders} onClickHandler={revealCards} />
+        return (
+            <PlaceHolder
+                placeholder={placeholders}
+                onClickHandler={revealCards}
+            />
+        )
     }
     if (error) {
         throw new Error()
     }
 
-    return <div>
+    return (
+        <div>
             <CardList {...data} />
         </div>
+    )
 }
 
 export default CardContainer

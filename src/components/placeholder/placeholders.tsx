@@ -18,7 +18,6 @@ const PlaceHolder = ({ placeholder, onClickHandler }: PlaceholderProps) => {
                 ))}
             </div>
         </>
-        
     )
 }
 
