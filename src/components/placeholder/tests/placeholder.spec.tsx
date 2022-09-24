@@ -6,6 +6,7 @@ import { PlaceholderProps } from '../../../types/placeholder'
 test('renders learn Placeholders', async () => {
     const props: PlaceholderProps = {
         placeholder: ['slug', 'slug2'],
+        onClickHandler: jest.fn()
     }
 
     render(<Placeholders {...props} />)

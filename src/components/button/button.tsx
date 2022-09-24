@@ -1,21 +1,14 @@
 import './styles/index.scss'
-import Context from '../../store/context'
-import { useContext } from 'react'
 
 const namespace = 'button'
 
-const Button = () => {
-    const { reveal, revealCards } = useContext(Context)
-
-    if (reveal) {
-        return null
-    }
+const Button = ({onClickHandler} : any) => {
 
     return (
         <button
             data-testid={namespace}
             className={`${namespace}__reveal`}
-            onClick={revealCards}
+            onClick={onClickHandler}
         >
             Reveal
         </button>
