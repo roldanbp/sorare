@@ -1,4 +1,3 @@
-
 .card-list {
     padding: 40px;
     height: 100%;
@@ -9,9 +8,9 @@
     flex-wrap: wrap;
 
     &__placeholder {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
-        background-color: #af8989;;
+        background-color: #af8989;
         display: flex;
         flex-direction: column;
         padding: 20px;
@@ -20,6 +19,6 @@
         width: 200px;
         background-size: cover;
         color: white;
-        background-image: url("../../../../public/ph.png");
+        background-image: url('../../../../public/ph.png');
     }
 }

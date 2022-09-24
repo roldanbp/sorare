@@ -18,8 +18,6 @@ interface Player {
 
 export interface CardProps {
     player: Player
-    firstName: string
-    lastName: string
     age: string
     position: string
     rarity: string
@@ -27,7 +25,7 @@ export interface CardProps {
     serialNumber: string
     season: Season
     team: Team
-  }
+}
 
 export interface Cards {
     cards?: CardProps[]

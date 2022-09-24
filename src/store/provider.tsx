@@ -1,18 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-import CardState from './state/cards-state';
-import Context from './context';
+import CardState from './state/cards-state'
+import Context from './context'
 
+const Provider = ({ children }: any) => {
+    const store = { ...CardState() }
 
-const Provider = ({children}: any) => {
-  const store = { ...CardState() };
+    return <Context.Provider value={store}>{children}</Context.Provider>
+}
 
-  return (
-    <Context.Provider value={store}>
-      {children}
-    </Context.Provider>
-  );
-};
-
-
-export default Provider;
+export default Provider
