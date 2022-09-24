@@ -1,0 +1,19 @@
+.button {
+    &__reveal {
+        background-color: transparent;
+        border: 2px solid #af8989;
+        border-radius: 10px;
+        color: #af8989;
+        padding: 10px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        &:hover {
+          transition: 0.3s;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+      }
+}

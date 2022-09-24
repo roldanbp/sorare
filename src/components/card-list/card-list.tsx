@@ -5,9 +5,8 @@ import Card from "../card/card"
 
 const namespace = "card-list"
 
-const List = (data: Cards) => {
-
+const CardList = (data?: Cards ) => {
     return <div className={namespace}>{data?.cards?.map((item: CardProps) => <Card {...item} />)}</div>
 } 
 
-export default List
+export default CardList

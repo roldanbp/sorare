@@ -1,0 +1,25 @@
+
+.card-list {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__placeholder {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        background-color: #af8989;;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+        height: 370px;
+        width: 200px;
+        background-size: cover;
+        color: white;
+        background-image: url("../../../../public/ph.png");
+    }
+}

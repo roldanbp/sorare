@@ -1,43 +1,25 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import CardList from "../components/card-list/card-list"
-import { getCardQuery } from "../graphql/querys/card-query";
-
-const CARD_QUERY = gql`
-{
-  cards(slugs: "marco-verratti-2021-unique-1") {
-    player {
-      firstName
-      lastName
-      pictureUrl
-      country {
-        flagUrl
-      }
-    }
-    age
-    position
-    rarity
-    shirtNumber
-    serialNumber
-    season {
-      name
-    }
-    team {
-      ... on Club {
-        pictureUrl
-      }
-    }
-  }
-}
-`;
+import PlaceHolder from "../components/placeholder/placeholders";
+import { GET_CARD_QUERY } from "../graphql/querys/card-query";
+import Context from '../store/context';
 
 const CardContainer = () => {
-    const { slug } = useParams();
-    
-    const { loading, error, data } = useQuery(getCardQuery(slug || ""));
+  const { reveal, revealCards } = useContext(Context);
 
-    if(loading){ console.log("LOADING")}
-    if(error){ console.log("error")}
+    const { slug } = useParams();
+
+    const slugs = slug?.split(",") || []
+    const { loading, error, data } = useQuery(GET_CARD_QUERY, {
+      variables: { slugs}
+    });
+
+    if(!reveal || loading){ 
+      return <PlaceHolder placeholder={slugs} />
+    }
+    if(error){ console.log("error",error)}
 
     return <CardList {...data}/>
 }

@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 
-export const getCardQuery = ( slug: string) => {
-return  gql`
+export const GET_CARD_QUERY = gql`
+query Cards($slugs: [String!])
 {
-  cards(slugs: "${slug}") {
+  cards(slugs: $slugs) {
     player {
       firstName
       lastName
@@ -28,4 +28,3 @@ return  gql`
   }
 }
 `;
-}

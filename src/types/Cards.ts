@@ -30,5 +30,5 @@ export interface CardProps {
   }
 
 export interface Cards {
-    cards: CardProps[]
+    cards?: CardProps[]
 }
